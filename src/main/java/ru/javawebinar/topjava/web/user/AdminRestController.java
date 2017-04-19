@@ -10,7 +10,7 @@ import java.util.List;
 @Controller
 public class AdminRestController extends AbstractUserController {
 
-    @Autowired
+//    @Autowired
     public AdminRestController(UserService service) {
         super(service);
     }

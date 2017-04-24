@@ -19,11 +19,9 @@
         <tomcat.version>8.5.5</tomcat.version>
         <spring.version>4.3.7.RELEASE</spring.version>
         <spring-data-jpa.version>1.11.1.RELEASE</spring-data-jpa.version>
-
         <!-- Logging -->
         <logback.version>1.2.2</logback.version>
         <slf4j.version>1.7.25</slf4j.version>
-
         <!--DB-->
         <postgresql.version>42.0.0</postgresql.version>
         <!--    Tests  -->

@@ -24,4 +24,10 @@ public interface MealService {
     Meal update(Meal meal, int userId) throws NotFoundException;
 
     Meal save(Meal meal, int userId);
+    Meal getWithUser(int id,int userId);
+    List<Meal>getBetweenDateTimeWithUser(LocalDateTime startDate,LocalDateTime endDate,int userId);
+    default  List<Meal>getBetweenDatesWithUser(LocalDate startDate,LocalDate endDate,int userId){
+        return getBetweenDateTimeWithUser(LocalDateTime.of(startDate, LocalTime.MIN),
+                LocalDateTime.of(endDate, LocalTime.MAX),userId);
+    }
 }

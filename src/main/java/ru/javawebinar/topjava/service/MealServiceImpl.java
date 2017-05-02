@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.javawebinar.topjava.model.Meal;
 import org.springframework.util.Assert;
 import ru.javawebinar.topjava.repository.MealRepository;
+import ru.javawebinar.topjava.repository.datajpa.CrudMealRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -53,5 +54,12 @@ public class MealServiceImpl implements MealService {
     public Meal save(Meal meal, int userId) {
         Assert.notNull(meal, "meal must not be null");
         return repository.save(meal, userId);
+    }
+    public Meal getWithUser(int id,int userId){
+        return repository.getWithUser(id,userId);}
+
+    @Override
+    public List<Meal> getBetweenDateTimeWithUser(LocalDateTime startDate,LocalDateTime endDate,int userId) {
+        return repository.getBetweenWithUser(userId,startDate,endDate);
     }
 }

@@ -2,6 +2,7 @@ package ru.javawebinar.topjava.util;
 
 import org.springframework.util.StringUtils;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -30,5 +31,10 @@ public class DateTimeUtil {
 
     public static LocalTime parseLocalTime(String str) {
         return StringUtils.isEmpty(str) ? null : LocalTime.parse(str);
+    }
+    public static Timestamp toHsqldbConverter(LocalDateTime localDateTime){
+
+        StringBuilder sb=new StringBuilder(localDateTime.toString().replace('T',' ').substring(0,16)).append(":00");
+        return Timestamp.valueOf(sb.toString());
     }
 }

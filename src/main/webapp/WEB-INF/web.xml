@@ -5,6 +5,7 @@
          version="3.1">
     <display-name>Topjava</display-name>
 
+
     <servlet>
         <servlet-name>userServlet</servlet-name>
         <servlet-class>ru.javawebinar.topjava.web.UserServlet</servlet-class>

@@ -70,7 +70,7 @@
                         </td>
                         <%--<td><a href="meals/delete?id=${meal.id}"><spring:message code="common.delete"/></a></td>--%>
 
-                        <td><a class="btn btn-xs btn-danger delete" id ="${meal.id}">
+                        <td><a class="delete" onclick="deleteRow(${meal.id})">
                             <span class="glyphicon glyphicon-remove"></span>
                             </a>
 

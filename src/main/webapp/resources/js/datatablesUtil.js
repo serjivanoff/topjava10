@@ -1,7 +1,4 @@
 function makeEditable() {
-    $('.delete').click(function () {
-        deleteRow($(this).attr("id"));
-    });
     $('#filterForm').submit(function () {
         filter();
         return false;

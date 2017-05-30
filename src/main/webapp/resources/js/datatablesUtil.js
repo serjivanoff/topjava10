@@ -2,7 +2,10 @@ function makeEditable() {
     $('.delete').click(function () {
         deleteRow($(this).attr("id"));
     });
-
+    $('#filterForm').submit(function () {
+        filter();
+        return false;
+    })
     $('#detailsForm').submit(function () {
         save();
         return false;
@@ -46,9 +49,21 @@ function save() {
         url: ajaxUrl,
         data: form.serialize(),
         success: function () {
-            $('#editRow').modal('hide');
-            updateTable();
-            successNoty('Saved');
+        }
+    });
+}
+function filter(){
+    var form=$('#filterForm');
+    $.ajax({
+        type:"POST",
+        url:ajaxUrl+"filter",
+        data:form.serialize(),
+        success:function (data) {
+        datatableApi.clear();
+            $.each(data, function (key, item) {
+                datatableApi.row.add(item);
+            });
+            datatableApi.draw();
         }
     });
 }

@@ -1,5 +1,5 @@
 var form;
-
+// var i18n = [];
 function makeEditable() {
     form = $('#detailsForm');
     $(document).ajaxError(function (event, jqXHR, options, jsExc) {

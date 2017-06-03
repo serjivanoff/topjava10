@@ -17,11 +17,21 @@ function clearFilter() {
 
 $(function () {
     datatableApi = $("#datatable").DataTable({
+        "ajax": {
+            "url": ajaxUrl,
+            "dataSrc": ""
+        },
         "paging": false,
         "info": true,
         "columns": [
             {
                 "data": "dateTime"
+                ,"render": function (data, type, row) {
+                    // if (type === 'display') {
+                    //     var result=
+                    // }
+                    return '<span>'+ data.replace('T',' ').substring(0,16)+'</span>';
+                }
             },
             {
                 "data": "description"
@@ -30,12 +40,14 @@ $(function () {
                 "data": "calories"
             },
             {
-                "defaultContent": "Edit",
-                "orderable": false
+                "defaultContent": "",
+                "orderable": false,
+                "render": renderEditBtn
             },
             {
-                "defaultContent": "Delete",
+                "defaultContent": "",
                 "orderable": false
+                ,"render": renderDeleteBtn
             }
         ],
         "order": [
@@ -43,7 +55,13 @@ $(function () {
                 0,
                 "desc"
             ]
-        ]
+        ],
+        "createdRow": function (row, data, dataIndex) {
+            if (data.exceed) {
+                $(row).addClass("exceeded");
+            }else{$(row).addClass("normal");}
+        },
+        "initComplete": makeEditable
     });
-    makeEditable();
+        $('#datetimepicker12').datetimepicker();
 });

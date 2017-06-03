@@ -55,7 +55,7 @@
                                 code="meals.dateTime"/></label>
 
                         <div class="col-xs-9">
-                            <input type="datetime-local" class="form-control" id="dateTime" name="dateTime"
+                            <input class="form-control" id="dateTime" name="dateTime"
                                    placeholder="<spring:message code="meals.dateTime"/>">
                         </div>
                     </div>
@@ -88,21 +88,21 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker12'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
+<%--<div class="container">--%>
+    <%--<div class="row">--%>
+        <%--<div class='col-sm-6'>--%>
+            <%--<div class="form-group">--%>
+                <%--<div class='input-group date' id='datetimepicker12'>--%>
+                    <%--<input type='text' class="form-control" />--%>
+                    <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
 
-    </div>
-</div>
+    <%--</div>--%>
+<%--</div>--%>
 </body>
 <script type="text/javascript">
     var i18n = [];

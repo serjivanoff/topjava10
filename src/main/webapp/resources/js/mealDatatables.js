@@ -30,7 +30,7 @@ $(function () {
                     // if (type === 'display') {
                     //     var result=
                     // }
-                    return '<span>'+ data.replace('T',' ').substring(0,16)+'</span>';
+                    return data;
                 }
             },
             {
@@ -63,5 +63,8 @@ $(function () {
         },
         "initComplete": makeEditable
     });
-        $('#datetimepicker12').datetimepicker();
+        $('#dateTime').datetimepicker({
+                format: 'Y-m-d H:i'
+            // formatDate: 'Y-m-d H-i'
+        });
 });
